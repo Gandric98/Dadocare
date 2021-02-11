@@ -1,0 +1,29 @@
+try { 
+					Apartman a;
+					Soba b;
+					int brojKreveta=Integer.parseInt(textbrojKreveta.getText());
+					int brojNocenja=Integer.parseInt(textbrojNocenja.getText());
+					float cenaPoKrevetu=Float.parseFloat(textcenaPoKrevetu.getText());
+					if(checkBoxIzbor.isSelected()) {
+						a = new Apartman(brojKreveta,brojNocenja,cenaPoKrevetu);
+						a.cenaAranzmana();
+						ListaApartmana.add(a);
+					}else {
+						b= new Soba(brojKreveta,brojNocenja,cenaPoKrevetu);
+						b.cenaAranzmana();
+						ListaSoba.add(b);
+					}
+				}catch(Exception e1) {
+					JOptionPane.showMessageDialog(null,"Unos pogresnog parametra");
+          
+          float suma=0;
+				for(Soba c:ListaSoba) {
+					suma=suma+c.getCenaPoKrevetu();
+				}
+				textArea.append(suma+"\n");
+        
+        for(Apartman a:ListaApartmana) {
+					textArea.append(a.toString()+"\n");
+          
+          public ArrayList<Soba> ListaSoba= new ArrayList<Soba>();
+	public ArrayList<Apartman> ListaApartmana = new ArrayList<Apartman>();
