@@ -1,0 +1,37 @@
+UNOS
+
+try {
+					int a=Integer.parseInt(TekstVrednost.getText());
+					String b=TekstBoja.getText();
+					if(a<1 || a>14) {
+						JOptionPane.showMessageDialog(null,"unesi broj izmedju 1 i 14");	
+					}else {
+						Karta k=new Karta(b,a);
+						izvuciKartu(k);
+						textArea.append(k.toString()+"\n");
+						
+					}
+				}
+				catch(Exception e1) {
+					JOptionPane.showMessageDialog(null,"unesi broj umesto stringa");
+          
+          	@Override
+	public void izvuciKartu(Karta karta) {
+		izvuceno.add(karta);
+		
+		
+		
+	}
+
+	@Override
+	public int vrednostRuke() {
+		int brojac=0;
+		for(Karta k:izvuceno){
+			if(k.jeStih()) {
+			brojac++;
+			}
+			
+		}
+		return brojac;
+    
+    gas.setText(vrednostRuke()+"");
